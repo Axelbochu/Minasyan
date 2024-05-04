@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+*{margin: 0; padding: 0; color: #f4ebeb; font-family: 'Roboto', sans-serif;}
+
+body{
+    height: 100vh;
+    overflow-y: hidden;
+    width: 100%;
+    background-color: #0b1639;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.textAcceuilContainer{
+    height: 30vh;
+    width: 100%;
+    text-align: center;
+}
+
+.textAcceuilContainer h1{
+    font-size: 60px;
+}
+
+.linkContainer, .dataGlobalContainer{
+    height: 70vh;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.linkContainer{width: 80%;}
+.dataGlobalContainer{width: 70%;}
+
+.partLink, .dataContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.partLink{width: 18%;}
+.dataContainer{width: 30%;}
+
+.partLink a{
+    display: block;
+    width: 10vw; /*container 70% de 100vw donc celui la fait 30% de 70 soit 21% total*/
+    height: 10vw;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partLink a img {
+    height: 70%;
+    width: 70%;
+}
+
+.articleContainer a{background-color: #D16666;}
+.chiffreContainer a, .blurCont{background-color: #FFFD98;} 
+.guestContainer a{background-color: #bde4a7;}
+.photoSocContainer a{background-color: #87a1f4;}
+
+.partLink a:hover{
+    background-color: #5e37ba;
+}
+
+/*Partie data*/
+#retourBtn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #f4ebeb;
+    color: #0b1639;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+#retourBtn:hover{
+    border: 1px solid #f4ebeb;
+    background-color: #0b1639;
+    color: #f4ebeb;
+}
+
+.dataContainer{
+    position: relative;
+    height: 21vw;
+}
+
+.blurCont{
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blurCont h2, .blurCont p{
+    color: #0b1639;
+}
+
+.blurCont h2{
+    font-size: 50px;
+}
+
+.iconeModif{
+    position: absolute;
+    height: 40%;
+    width: 40%;
+}
+
+.initialHidden{
+    visibility: hidden;
+}
+
+.hiddenBtn{
+    visibility: hidden;
+    animation-name: visToHid;
+    animation-duration: 1s;
+}
+
+.visibleBtn{
+    visibility: visible;
+    animation-name: hidToVis;
+    animation-duration: 1s;
+}
+
+@keyframes hidToVis {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100%{
+        visibility: visible;
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes visToHid {
+    0%{
+        visibility: visible;
+        opacity: 100%;
+        transform: translateY(0);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(10px);
+        visibility: hidden;
+    }
+}
+
+.withBlur{
+    filter: blur(4px);
+    animation-duration: 0.7s;
+    animation-name: noToBlur;
+}
+
+.withoutBlur{
+    filter: blur(0);
+    animation-duration: 0.7s;
+    animation-name: blurToNo;
+}
+
+@keyframes noToBlur {
+    0%{
+        filter: blur(0);
+    }
+
+    100%{
+        filter: blur(4px);
+    }
+}
+
+@keyframes blurToNo {
+    0%{
+        filter: blur(4px);
+    }
+
+    100%{
+        filter: blur(0);
+    }
+}
+
+.majContainer{
+    position: relative;
+    height: 70vh;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFD98;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+/*Partie div de modif*/
+
+.apparitionMajDiv{
+    animation-name: monteeDiv;
+    animation-duration: 1s;
+}
+
+@keyframes monteeDiv {
+    0%{
+        transform: translateY(70vh);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.majContainer h2{
+    height: 20%;
+    color: #0b1639;
+    padding: 10px;
+}
+
+.majContainer form{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.majContainer label{
+    color: #0b1639;
+}
+
+.majContainer input, .majContainer textarea{
+    background-color: #0b1639;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.majContainer input:focus, .majContainer textarea:focus{
+    border-bottom: 5px solid #34dc28;
+}
+
+.majContainer button{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #970931;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.majContainer button:hover{
+    background-color: #dca7e4;
+    color: #0b1639;
+}

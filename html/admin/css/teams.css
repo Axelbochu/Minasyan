@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+*{margin: 0; padding: 0; color: #f4ebeb; font-family: 'Roboto', sans-serif; box-sizing: border-box;}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #0b1639;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#retourBtn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #f4ebeb;
+    color: #0b1639;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+#retourBtn:hover{
+    border: 1px solid #f4ebeb;
+    background-color: #0b1639;
+    color: #f4ebeb;
+}
+
+
+.textAcceuilContainer{
+    height: 30vh;
+    width: 100%;
+    text-align: center;
+}
+
+.textAcceuilContainer h1{
+    font-size: 60px;
+}
+
+.downContainer{
+    width: 80%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card{
+    /*ratio de 1.25*/
+    height: 400px;
+    width: 320px;
+    margin: 10px;
+}
+
+.cardNormale{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blurCont{
+    position: relative;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.iconeModif{
+    position: absolute;
+    height: 40%;
+    width: auto;
+}
+
+
+
+.descriptionCard{
+    background-color: #bde4a7;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+}
+
+.descriptionCard h2, .descriptionCard h3{    
+    text-align: center;
+    color: #0b1639;
+}
+
+.descriptionCard p{
+    color: #0b1639;
+}
+
+/*animation pour chaque cartes*/
+
+.initialHidden{
+    visibility: hidden;
+}
+
+.hiddenBtn{
+    visibility: hidden;
+    animation-name: visToHid;
+    animation-duration: 1s;
+}
+
+.visibleBtn{
+    visibility: visible;
+    animation-name: hidToVis;
+    animation-duration: 1s;
+}
+
+@keyframes hidToVis {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100%{
+        visibility: visible;
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes visToHid {
+    0%{
+        visibility: visible;
+        opacity: 100%;
+        transform: translateY(0);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(10px);
+        visibility: hidden;
+    }
+}
+
+.withBlur{
+    filter: blur(4px);
+    animation-duration: 0.7s;
+    animation-name: noToBlur;
+}
+
+.withoutBlur{
+    filter: blur(0);
+    animation-duration: 0.7s;
+    animation-name: blurToNo;
+}
+
+@keyframes noToBlur {
+    0%{
+        filter: blur(0);
+    }
+
+    100%{
+        filter: blur(4px);
+    }
+}
+
+@keyframes blurToNo {
+    0%{
+        filter: blur(4px);
+    }
+
+    100%{
+        filter: blur(0);
+    }
+}
+
+
+
+
+
+
+.cardPlus{
+    background-color: #bde4a7;
+}
+
+.containerPlus{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerPlus img{
+    height: 40%;
+    width: auto;
+}
+
+.containerPlus:hover{
+    background-color: #dca7e4;
+}
+
+.containerNewTeam{
+    height: 100%;
+    width: 100%;
+}
+
+.containerNewTeam form{
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.containerNewTeam form label{
+    color: #0b1639;
+}
+
+.containerNewTeam form input, .containerNewTeam form textarea{
+    background-color: #0b1639;
+    padding: 5px;
+}
+
+.containerNewTeam form button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: #970931;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.containerNewTeam form button:hover{
+    background-color: #dca7e4;
+    color: #0b1639;
+}
+
+.submitErr{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+#submitBtn:hover{
+    background-color: #dca7e4;
+    color: #0b1639;
+}
+
+.majContainer{
+    position: relative;
+    height: 70vh;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFD98;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+/*Partie div de modif*/
+
+.apparitionMajDiv{
+    animation-name: monteeDiv;
+    animation-duration: 1s;
+}
+
+@keyframes monteeDiv {
+    0%{
+        transform: translateY(70vh);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.majContainer h2{
+    height: 20%;
+    color: #0b1639;
+    padding: 10px;
+}
+
+.majContainer form{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.majContainer label{
+    color: #0b1639;
+}
+
+.majContainer input, .majContainer textarea{
+    background-color: #0b1639;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.majContainer input:focus, .majContainer textarea:focus{
+    border-bottom: 5px solid #34dc28;
+}
+
+.majContainer button{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #970931;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.majContainer button:hover{
+    background-color: #dca7e4;
+    color: #0b1639;
+}
+
+.labelPlusInput{
+    display: flex;
+    flex-direction: row;
+}
+
+.labelPlusInput input{
+    margin-right: 10px;
+}
+
+.orgaLabel{
+    display: flex;
+    flex-direction: column;
+}
+
+#supprimerGuest{
+    background-color: #970931;
+}
